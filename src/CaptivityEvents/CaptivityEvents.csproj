@@ -35,13 +35,6 @@
     <HarmonyExtensionsVersion>2.0.0.51</HarmonyExtensionsVersion>
   </PropertyGroup>
 
-
-  <ItemGroup>
-    <Compile Remove="CaptivityEventsTest\**" />
-    <EmbeddedResource Remove="CaptivityEventsTest\**" />
-    <None Remove="CaptivityEventsTest\**" />
-  </ItemGroup>
-
   <!--Windows Forms-->
   <ItemGroup>
     <_SDKImplicitReference Include="System.Windows.Forms" />

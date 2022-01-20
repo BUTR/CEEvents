@@ -3,7 +3,7 @@ using FluentAssertions;
 using NUnit.Framework;
 using System.Collections.Generic;
 
-namespace CaptivityEventsTests
+namespace CaptivityEvents.Tests
 {
     [TestFixture]
     public class CEDefaultPregnancyModelTests
