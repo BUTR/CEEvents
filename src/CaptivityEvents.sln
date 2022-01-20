@@ -14,6 +14,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaptivityEvents", "Captivit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptivityEvents.Tests", "CaptivityEvents.Tests\CaptivityEvents.Tests.csproj", "{0F3E0A63-40F4-46D5-937D-148A16535B0D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{4DCC6ECA-F9C1-40DF-97F5-5F26F5E17067}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{6DF23DC6-E482-4233-95B1-56A3DC70216B}"
+	ProjectSection(SolutionItems) = preProject
+		..\build\scripts\build-fully.ps1 = ..\build\scripts\build-fully.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{7C95FC8C-473A-4AFC-A4FB-5471FCD92D64}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\dotnet-format-daily.yml = ..\.github\workflows\dotnet-format-daily.yml
+		..\.github\workflows\publish.yml = ..\.github\workflows\publish.yml
+		..\.github\workflows\test-build.yml = ..\.github\workflows\test-build.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Beta_Debug|Any CPU = Beta_Debug|Any CPU
@@ -86,6 +100,9 @@ Global
 		{7908C09A-DD4A-4667-BD5C-7DCDD3C2A70F} = {79BBC319-6803-427F-BD65-0912A0E693D4}
 		{D8ADDA48-1C68-40EE-83DA-BE3D66363281} = {7908C09A-DD4A-4667-BD5C-7DCDD3C2A70F}
 		{0F3E0A63-40F4-46D5-937D-148A16535B0D} = {7908C09A-DD4A-4667-BD5C-7DCDD3C2A70F}
+		{4DCC6ECA-F9C1-40DF-97F5-5F26F5E17067} = {79BBC319-6803-427F-BD65-0912A0E693D4}
+		{6DF23DC6-E482-4233-95B1-56A3DC70216B} = {4DCC6ECA-F9C1-40DF-97F5-5F26F5E17067}
+		{7C95FC8C-473A-4AFC-A4FB-5471FCD92D64} = {79BBC319-6803-427F-BD65-0912A0E693D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B8AFE6A-8841-4329-AC9E-497C28CF8C8D}

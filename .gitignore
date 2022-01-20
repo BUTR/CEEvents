@@ -342,3 +342,4 @@ healthchecksdb
 /VSCODEWORKSPACE.code-workspace
 *.ncrunchsolution
 *.orig
+/bannerlord/*

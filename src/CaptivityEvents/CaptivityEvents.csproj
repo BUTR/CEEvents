@@ -9,8 +9,9 @@
     <!-- Module Version -->
     <Version>1032</Version>
     <!-- Module manually override GameVersion -->
-    <OverrideGameVersion>e1.7.0</OverrideGameVersion>
+    <!-- <OverrideGameVersion>e1.6.5</OverrideGameVersion> -->
 
+    <Nullable>disable</Nullable>
     <Author>BadListener</Author>
     <Company>BadListener</Company>
   </PropertyGroup>
