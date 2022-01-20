@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="$modulename$" />
+  <Id value="$moduleid$" />
+  <Version value="v$version$" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <DependedModules>
+    <DependedModule Id="Native" DependentVersion="e$gameversion$." />
+    <DependedModule Id="SandBoxCore" DependentVersion="e$gameversion$." />
+    <DependedModule Id="Sandbox" DependentVersion="e$gameversion$." />
+    <DependedModule Id="CustomBattle" DependentVersion="e$gameversion$." optional="true" />
+    <DependedModule Id="StoryMode" DependentVersion="e$gameversion$." />
+  </DependedModules>
+  <SubModules>
+    <!-- Bannerlord Module Loader. Do not change the name! -->
+    <SubModule>
+      <Name value="Bannerlord Module Loader" />
+      <DLLName value="Bannerlord.ModuleLoader.$moduleid$.dll" />
+      <SubModuleClassType value="Bannerlord.ModuleLoader.$moduleidflat$" />
+      <Tags>
+        <Tag key="LoaderFilter" value ="$moduleid$.*.dll" />
+      </Tags>
+    </SubModule>
+  </SubModules>
+</Module>

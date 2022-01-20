@@ -1,4 +1,3 @@
-#define V170
 using CaptivityEvents.Brothel;
 using CaptivityEvents.CampaignBehaviors;
 using CaptivityEvents.Config;
@@ -154,7 +153,7 @@ namespace CaptivityEvents
 
         // Mount & Blade II Bannerlord\GUI\GauntletUI\spriteData.xml 
         // Mount & Blade II Bannerlord\Modules\Native\GUI\NativeSpriteData.xml
-#if V165
+#if e165
         private static readonly int[] sprite_index = new int[] { 20, 29, 27, 26 };
 #else
         private static readonly int[] sprite_index = new int[] { 3, 4, 5, 6 };
@@ -389,7 +388,7 @@ namespace CaptivityEvents
                         CECustomHandler.ForceLogToFile("Failure to load " + file + " - exception : " + e);
                     }
                 }
-#if V170
+#if e170
                 SpriteCategory spriteCategory = UIResourceManager.SpriteData.SpriteCategories["ui_fullbackgrounds"];
                 spriteCategory.SpriteSheets.AddRange(new Texture[]{ CEPersistence.CEEventImageList["default_female_prison"], CEPersistence.CEEventImageList["default_male_prison"], CEPersistence.CEEventImageList["default_female"], CEPersistence.CEEventImageList["default_male"] });
                 spriteCategory.SheetSizes = spriteCategory.SheetSizes.AddRangeToArray(new Vec2i[] { new Vec2i(445, 805), new Vec2i(445, 805), new Vec2i(445, 805), new Vec2i(445, 805) });
@@ -1071,7 +1070,7 @@ namespace CaptivityEvents
                     case CEPersistence.DungeonState.FadeIn:
                         if (brothelTimerOne < missionStateDungeon.CurrentMission.CurrentTime)
                         {
-#if V165
+#if e165
                             CEPersistence.agentTalkingTo.ResetAI();
 #else
                             CEPersistence.agentTalkingTo.ResetLookAgent();
@@ -1144,7 +1143,7 @@ namespace CaptivityEvents
                             brothelTimerThree = missionStateBrothel.CurrentMission.CurrentTime + MBRandom.RandomFloatRanged(brothelSoundMin, brothelSoundMax);
                             Hero.MainHero.HitPoints += 10;
 
-#if V165
+#if e165
                             CEPersistence.agentTalkingTo.ResetAI();
 #else
                             CEPersistence.agentTalkingTo.ResetLookAgent();

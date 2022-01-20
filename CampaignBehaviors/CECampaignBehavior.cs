@@ -1,4 +1,3 @@
-#define V170
 using CaptivityEvents.Config;
 using CaptivityEvents.Custom;
 using CaptivityEvents.Events;
@@ -433,7 +432,7 @@ namespace CaptivityEvents.CampaignBehaviors
 
             // Reflection One
             MethodInfo mi = typeof(HeroCreator).GetMethod("CreateNewHero", BindingFlags.NonPublic | BindingFlags.Static);
-#if V165
+#if e165
             if (mi == null) return HeroCreator.DeliverOffSpring(mother, father, isOffspringFemale, null, 0);
 #else
             if (mi == null) return HeroCreator.DeliverOffSpring(mother, father, isOffspringFemale, null);
@@ -444,7 +443,7 @@ namespace CaptivityEvents.CampaignBehaviors
             hero.SetBirthDay(CampaignTime.Now);
 
             int becomeChildAge = Campaign.Current.Models.AgeModel.BecomeChildAge;
-#if V165
+#if e165
             CharacterObject characterObject2 = CharacterObject.ChildTemplates.FirstOrDefault((CharacterObject t) => t.Culture == mother.Culture && t.Age <= becomeChildAge && t.IsFemale == isOffspringFemale && t.Occupation == Occupation.Lord);
 #else
             culture = (culture ?? mother.Culture);
@@ -472,7 +471,7 @@ namespace CaptivityEvents.CampaignBehaviors
             }
 
 
-#if V165
+#if e165
             hero.SetName(NameGenerator.Current.GenerateHeroFirstName(hero, true), null);
             hero.CharacterObject.Name = hero.FirstName;
 #else
@@ -508,7 +507,7 @@ namespace CaptivityEvents.CampaignBehaviors
 
             // Reflection Two
             MethodInfo mi2 = typeof(HeroCreator).GetMethod("DecideBornSettlement", BindingFlags.NonPublic | BindingFlags.Static);
-#if V165
+#if e165
             if (mi == null) return HeroCreator.DeliverOffSpring(mother, father, isOffspringFemale, null, 0);
 #else
             if (mi == null) return HeroCreator.DeliverOffSpring(mother, father, isOffspringFemale, null);
@@ -581,7 +580,7 @@ namespace CaptivityEvents.CampaignBehaviors
                         {
                             CECustomHandler.ForceLogToFile("Bad pregnancy " + (isOffspringFemale ? "Female" : "Male"));
                             CECustomHandler.ForceLogToFile(e.Message + " : " + e);
-#if V165
+#if e165
                             Hero item = HeroCreator.DeliverOffSpring(pregnancy.Mother, pregnancy.Father, !isOffspringFemale, null, 0);
 #else
                             Hero item = HeroCreator.DeliverOffSpring(pregnancy.Mother, pregnancy.Father, !isOffspringFemale, null);

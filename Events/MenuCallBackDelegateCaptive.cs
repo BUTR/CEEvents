@@ -319,7 +319,7 @@ namespace CaptivityEvents.Events
             try
             {
                 if (PlayerCaptivity.CaptorParty.LeaderHero != null) KillCharacterAction.ApplyByMurder(PlayerCaptivity.CaptorParty.LeaderHero, Hero.MainHero);
-#if V165
+#if e165
                 else PlayerCaptivity.CaptorParty.MemberRoster.AddToCounts(PlayerCaptivity.CaptorParty.Leader, -1);
 #else
 #endif
@@ -1853,7 +1853,7 @@ namespace CaptivityEvents.Events
                          ? 1
                          : 0);
 
-#if V165
+#if e165
             if (PlayerCaptivity.CaptorParty.Leader != null)
             {
                 text.SetTextVariable("CAPTOR_NAME", PlayerCaptivity.CaptorParty.Leader.Name);

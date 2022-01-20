@@ -1,5 +1,4 @@
-﻿#define V170
-using CaptivityEvents.CampaignBehaviors;
+﻿using CaptivityEvents.CampaignBehaviors;
 using CaptivityEvents.Config;
 using CaptivityEvents.Custom;
 using Helpers;
@@ -193,7 +192,7 @@ namespace CaptivityEvents.Events
                     {
                         clan = leader.Character.HeroObject.Clan;
                         nearest = SettlementHelper.FindNearestSettlement(settlement => settlement.OwnerClan == clan) ?? SettlementHelper.FindNearestSettlement(settlement => true);
-#if V165
+#if e165
                         prisonerParty = LordPartyComponent.CreateLordParty("CustomPartyCE_" + MBRandom.RandomInt(int.MaxValue), leader.Character.HeroObject, MobileParty.MainParty.Position2D, 0.5f, nearest);
 #else
                         prisonerParty = LordPartyComponent.CreateLordParty("CustomPartyCE_" + MBRandom.RandomInt(int.MaxValue), leader.Character.HeroObject, MobileParty.MainParty.Position2D, 0.5f, nearest, leader.Character.HeroObject);
@@ -208,7 +207,7 @@ namespace CaptivityEvents.Events
                     }
 
                     PartyTemplateObject defaultPartyTemplate = clan.DefaultPartyTemplate;
-#if V165
+#if e165
                     prisonerParty.InitializeMobileParty(defaultPartyTemplate, MobileParty.MainParty.Position2D, 0.5f, 0.1f, -1);
 #else
                     prisonerParty.InitializeMobilePartyAroundPosition(defaultPartyTemplate, MobileParty.MainParty.Position2D, 0.5f, 0.1f, -1);
@@ -228,7 +227,7 @@ namespace CaptivityEvents.Events
                     if (leader.Character != null)
                     {
                         prisonerParty.Party.SetCustomOwner(leader.Character.HeroObject);
-#if V165
+#if e165
                         prisonerParty.ChangePartyLeader(leader.Character);
 #else
                         prisonerParty.ChangePartyLeader(leader.Character.HeroObject);
@@ -246,7 +245,7 @@ namespace CaptivityEvents.Events
 
                     Hero.MainHero.HitPoints += 40;
 
-#if V165
+#if e165
                     CECustomHandler.LogToFile(prisonerParty.Leader.Name.ToString());
 #else
                     CECustomHandler.LogToFile(prisonerParty.Name.ToString());
@@ -305,7 +304,7 @@ namespace CaptivityEvents.Events
 
                     PartyTemplateObject defaultPartyTemplate = clan.DefaultPartyTemplate;
 
-#if V165
+#if e165
                     prisonerParty.InitializeMobileParty(defaultPartyTemplate, MobileParty.MainParty.Position2D, 0.5f, 0.1f, -1);
 #else
                     prisonerParty.InitializeMobilePartyAroundPosition(defaultPartyTemplate, MobileParty.MainParty.Position2D, 0.5f, 0.1f, -1);
@@ -327,7 +326,7 @@ namespace CaptivityEvents.Events
                     Hero.MainHero.HitPoints += 40;
 
 
-#if V165
+#if e165
                     CECustomHandler.LogToFile(prisonerParty.Leader.Name.ToString());
 #else
                     CECustomHandler.LogToFile(prisonerParty.Name.ToString());
@@ -337,7 +336,7 @@ namespace CaptivityEvents.Events
                     PlayerEncounter.Update();
 
                     CEPersistence.huntState = CEPersistence.HuntState.StartHunt;
-#if V165
+#if e165
                     CampaignMission.OpenBattleMission(PlayerEncounter.GetBattleSceneForMapPosition(MobileParty.MainParty.Position2D));
 #else
                     MapPatchData mapPatchAtPosition = Campaign.Current.MapSceneWrapper.GetMapPatchAtPosition(MobileParty.MainParty.Position2D);

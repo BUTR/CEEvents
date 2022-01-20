@@ -1,5 +1,4 @@
-﻿#define V170
-using CaptivityEvents.Custom;
+﻿using CaptivityEvents.Custom;
 using System;
 using System.Linq;
 using TaleWorlds.CampaignSystem;
@@ -84,7 +83,7 @@ namespace CaptivityEvents.Events
                         culture = heroVariables.Culture;
                     }
 
-#if V165
+#if e165
                     CharacterObject wanderer = (from x in CharacterObject.Templates
                                                 where x.Occupation == Occupation.Wanderer && (culture == null || x.Culture != null && x.Culture.StringId == culture.ToLower()) && (heroVariables.Gender == null || x.IsFemale == isFemale)
                                                 select x).GetRandomElementInefficiently();

@@ -1,5 +1,4 @@
-﻿#define V170
-using CaptivityEvents.CampaignBehaviors;
+﻿using CaptivityEvents.CampaignBehaviors;
 using CaptivityEvents.Config;
 using CaptivityEvents.Custom;
 using CaptivityEvents.Helper;
@@ -104,7 +103,7 @@ namespace CaptivityEvents.Events
                     PlayerEncounter.ProtectPlayerSide();
                     MobileParty.MainParty.IsDisorganized = false;
                     PartyBase.MainParty.AddElementToMemberRoster(CharacterObject.PlayerCharacter, 1, true);
-#if V170
+#if e170
                     MobileParty.MainParty.ChangePartyLeader(Hero.MainHero);
 #endif
                 }

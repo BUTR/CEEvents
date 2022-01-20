@@ -1,5 +1,4 @@
-﻿#define V170
-using CaptivityEvents.CampaignBehaviors;
+﻿using CaptivityEvents.CampaignBehaviors;
 using CaptivityEvents.Config;
 using CaptivityEvents.Helper;
 using Helpers;
@@ -65,7 +64,7 @@ namespace CaptivityEvents.Events
                     }
                     else
                     {
-#if V165
+#if e165
                         CharacterObject m = CharacterObject.Templates.GetRandomElementWithPredicate(characterObject => characterObject.IsFemale == false && characterObject.Occupation == Occupation.Wanderer);
 #else
                         CharacterObject m = CharacterObject.PlayerCharacter.Culture.NotableAndWandererTemplates.GetRandomElementWithPredicate(characterObject => characterObject.IsFemale == false && characterObject.Occupation == Occupation.Wanderer);
@@ -87,7 +86,7 @@ namespace CaptivityEvents.Events
                 }
                 else if (forcePreg)
                 {
-#if V165
+#if e165
                     CharacterObject m = CharacterObject.Templates.GetRandomElementWithPredicate(characterObject => characterObject.IsFemale == false);
 #else
                     CharacterObject m = CharacterObject.PlayerCharacter.Culture.NotableAndWandererTemplates.GetRandomElementWithPredicate(characterObject => characterObject.IsFemale == false && characterObject.Occupation == Occupation.Wanderer);
@@ -154,7 +153,7 @@ namespace CaptivityEvents.Events
                 }
                 else
                 {
-#if V165
+#if e165
                     CharacterObject m = CharacterObject.Templates.Where(characterObject => characterObject.IsFemale && characterObject.Occupation == Occupation.Wanderer).GetRandomElementInefficiently();
 #else
                     CharacterObject m = CharacterObject.PlayerCharacter.Culture.NotableAndWandererTemplates.GetRandomElementWithPredicate(characterObject => characterObject.IsFemale && characterObject.Occupation == Occupation.Wanderer);
@@ -234,7 +233,7 @@ namespace CaptivityEvents.Events
                     }
                     else
                     {
-#if V165
+#if e165
                         CharacterObject m = CharacterObject.Templates.GetRandomElementWithPredicate(characterObject => characterObject.IsFemale == false && characterObject.Occupation == Occupation.Wanderer);
 #else
                         CharacterObject m = CharacterObject.PlayerCharacter.Culture.NotableAndWandererTemplates.GetRandomElementWithPredicate(characterObject => characterObject.IsFemale == false && characterObject.Occupation == Occupation.Wanderer);
@@ -256,7 +255,7 @@ namespace CaptivityEvents.Events
                 }
                 else if (forcePreg)
                 {
-#if V165
+#if e165
                     CharacterObject m = CharacterObject.Templates.GetRandomElementWithPredicate(characterObject => characterObject.IsFemale == false && characterObject.Occupation == Occupation.Wanderer);
 #else
                     CharacterObject m = CharacterObject.PlayerCharacter.Culture.NotableAndWandererTemplates.GetRandomElementWithPredicate(characterObject => characterObject.IsFemale == false && characterObject.Occupation == Occupation.Wanderer);
@@ -327,7 +326,7 @@ namespace CaptivityEvents.Events
                 }
                 else
                 {
-#if V165
+#if e165
                     CharacterObject m = CharacterObject.Templates.Where(characterObject => characterObject.IsFemale && characterObject.Occupation == Occupation.Wanderer).GetRandomElementInefficiently();
 #else
                     CharacterObject m = CharacterObject.PlayerCharacter.Culture.NotableAndWandererTemplates.GetRandomElementWithPredicate(characterObject => characterObject.IsFemale && characterObject.Occupation == Occupation.Wanderer);

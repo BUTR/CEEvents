@@ -1,5 +1,4 @@
-﻿#define V170
-using CaptivityEvents.Config;
+﻿using CaptivityEvents.Config;
 using CaptivityEvents.Custom;
 using CaptivityEvents.Helper;
 using CaptivityEvents.Issues;
@@ -878,7 +877,7 @@ namespace CaptivityEvents.Events
                                         {
                                             CECustomHandler.ForceLogToFile("ConsequenceStartBattle : city required. ");
                                         }
-#if V165
+#if e165
                                         // StartCommonAreaBattle RivalGangMovingInIssueBehavior
                                         MobileParty customParty = MobileParty.CreateParty("CustomPartyCE_" + MBRandom.RandomInt(int.MaxValue), null, null);
 
@@ -949,7 +948,7 @@ namespace CaptivityEvents.Events
 
                                         PartyTemplateObject defaultPartyTemplate = clan.DefaultPartyTemplate;
 
-#if V165
+#if e165
                                         customParty.InitializeMobileParty(defaultPartyTemplate, MobileParty.MainParty.Position2D, 0.5f, 0.1f, -1);
 #else
                                         customParty.InitializeMobilePartyAroundPosition(defaultPartyTemplate, MobileParty.MainParty.Position2D, 0.5f, 0.1f, -1);
@@ -991,7 +990,7 @@ namespace CaptivityEvents.Events
                                         PlayerEncounter.StartBattle();
                                         PlayerEncounter.Update();
                                         //EncounterAttackConsequence
-#if V165
+#if e165
                                         MissionInitializerRecord rec = new MissionInitializerRecord(PlayerEncounter.GetBattleSceneForMapPosition(MobileParty.MainParty.Position2D))
 #else
                                         MapPatchData mapPatchAtPosition = Campaign.Current.MapSceneWrapper.GetMapPatchAtPosition(MobileParty.MainParty.Position2D);
@@ -1026,7 +1025,7 @@ namespace CaptivityEvents.Events
 
                                         MobileParty customParty = BanditPartyComponent.CreateLooterParty("CustomPartyCE_" + MBRandom.RandomInt(int.MaxValue), clan, nearest, false);
                                         PartyTemplateObject defaultPartyTemplate = clan.DefaultPartyTemplate;
-#if V165
+#if e165
                                         customParty.InitializeMobileParty(defaultPartyTemplate, MobileParty.MainParty.Position2D, 0.5f, 0.1f, -1);
 #else
                                         customParty.InitializeMobilePartyAroundPosition(defaultPartyTemplate, MobileParty.MainParty.Position2D, 0.5f, 0.1f, -1);
@@ -1068,7 +1067,7 @@ namespace CaptivityEvents.Events
                                         PlayerEncounter.StartBattle();
                                         PlayerEncounter.Update();
                                         //EncounterAttackConsequence
-#if V165
+#if e165
                                         MissionInitializerRecord rec = new MissionInitializerRecord(PlayerEncounter.GetBattleSceneForMapPosition(MobileParty.MainParty.Position2D))
 #else
                                         MapPatchData mapPatchAtPosition = Campaign.Current.MapSceneWrapper.GetMapPatchAtPosition(MobileParty.MainParty.Position2D);

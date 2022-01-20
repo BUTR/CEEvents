@@ -1,4 +1,3 @@
-#define V170
 using CaptivityEvents.CampaignBehaviors;
 using CaptivityEvents.Config;
 using CaptivityEvents.Custom;
@@ -145,7 +144,7 @@ namespace CaptivityEvents.Brothel
                 TextObject textObject = new TextObject("{=CEBROTHEL0984}The brothel of {SETTLEMENT}", null);
                 textObject.SetTextVariable("SETTLEMENT", Hero.MainHero.CurrentSettlement.Name);
 
-#if V165
+#if e165
                 _partyScreenLogic.Initialize(TroopRoster.CreateDummyTroopRoster(), prisonRoster, MobileParty.MainParty, true, textObject, leftPartyMembersSizeLimit, new PartyPresentationDoneButtonDelegate(ManageBrothelDoneHandler), new TextObject("{=aadTnAEg}Manage Prisoners", null), false);
 
                 _partyScreenLogic.InitializeTrade(PartyScreenLogic.TransferState.NotTransferable, PartyScreenLogic.TransferState.Transferable, PartyScreenLogic.TransferState.NotTransferable);
@@ -201,7 +200,7 @@ namespace CaptivityEvents.Brothel
             }
         }
 
-#if V165
+#if e165
         private static bool ManageBrothelDoneHandler(TroopRoster leftMemberRoster, TroopRoster leftPrisonRoster, TroopRoster rightMemberRoster, TroopRoster rightPrisonRoster, FlattenedTroopRoster takenPrisonerRoster, FlattenedTroopRoster releasedPrisonerRoster, bool isForced, List<MobileParty> leftParties = null, List<MobileParty> rightParties = null)
         {
             SetBrothelPrisoners(Hero.MainHero.CurrentSettlement, leftPrisonRoster);
@@ -396,7 +395,7 @@ namespace CaptivityEvents.Brothel
             Hero prisonerCharacter = Hero.MainHero;
             if (prisonerCharacter.PartyBelongedTo != null)  
             {
-#if V170
+#if e170
                 if (prisonerCharacter.PartyBelongedTo.LeaderHero == prisonerCharacter)
                 {
                     prisonerCharacter.PartyBelongedTo.RemovePartyLeader();
@@ -438,7 +437,7 @@ namespace CaptivityEvents.Brothel
 
                 owner.Age = MBRandom.RandomInt(25, Campaign.Current.Models.AgeModel.BecomeOldAge);
                 owner.IsFemale = true;
-#if V165
+#if e165
                 owner.Name = new TextObject("{=CEEVENTS1050}Brothel Assistant");
 #else
                 TextObject name = new TextObject("{=CEEVENTS1050}Brothel Assistant");
@@ -453,7 +452,7 @@ namespace CaptivityEvents.Brothel
 
                 owner.Age = MBRandom.RandomInt(25, Campaign.Current.Models.AgeModel.MaxAge);
                 owner.IsFemale = true;
-#if V165
+#if e165
                 owner.Name = new TextObject("{=CEEVENTS1066}Brothel Owner");
 #else
                 TextObject name = new TextObject("{=CEEVENTS1066}Brothel Owner");
@@ -469,7 +468,7 @@ namespace CaptivityEvents.Brothel
         private static LocationCharacter CreateRansomBroker(CultureObject culture, LocationCharacter.CharacterRelations relation)
         {
             BasicCharacterObject owner = HelperCreateFrom(culture.RansomBroker, true);
-#if V165
+#if e165
             owner.Name = new TextObject("{=CEEVENTS1065}Slave Trader");
 #else
             TextObject name = new TextObject("{=CEEVENTS1065}Slave Trader");
@@ -517,7 +516,7 @@ namespace CaptivityEvents.Brothel
             CharacterObject townswoman = HelperCreateFrom(culture.TavernWench, true);
 
             townswoman.Age = MBRandom.RandomInt(25, Campaign.Current.Models.AgeModel.BecomeOldAge);
-#if V165
+#if e165
             townswoman.Name = new TextObject("{=CEEVENTS1093}Server");
 #else
             TextObject name = new TextObject("{=CEEVENTS1093}Server");
@@ -536,7 +535,7 @@ namespace CaptivityEvents.Brothel
             CharacterObject townswoman = HelperCreateFrom(culture.FemaleDancer, true);
 
             townswoman.Age = MBRandom.RandomInt(25, Campaign.Current.Models.AgeModel.BecomeOldAge);
-#if V165
+#if e165
             townswoman.Name = new TextObject("{=CEEVENTS1095}Prostitute");
 #else
             TextObject name = new TextObject("{=CEEVENTS1095}Prostitute");
@@ -553,7 +552,7 @@ namespace CaptivityEvents.Brothel
             CharacterObject townswoman = HelperCreateFrom(culture.FemaleDancer, true);
 
             townswoman.Age = MBRandom.RandomInt(25, Campaign.Current.Models.AgeModel.BecomeOldAge);
-#if V165
+#if e165
             townswoman.Name = new TextObject("{=CEEVENTS1095}Prostitute");
 #else
             TextObject name = new TextObject("{=CEEVENTS1095}Prostitute");
@@ -575,7 +574,7 @@ namespace CaptivityEvents.Brothel
             CharacterObject townsman = HelperCreateFrom(culture.Musician, true);
 
             townsman.Age = MBRandom.RandomInt(25, Campaign.Current.Models.AgeModel.BecomeOldAge);
-#if V165
+#if e165
             townsman.Name = new TextObject("{=CEEVENTS1095}Prostitute");
 #else
             TextObject name = new TextObject("{=CEEVENTS1095}Prostitute");
@@ -890,7 +889,7 @@ namespace CaptivityEvents.Brothel
             campaignGameStarter.AddDialogLine("ce_assistant_party_00_n", "ce_assistant_party_00", "ce_assistant_response_00", "{=CEBROTHEL1071}Sorry, {?PLAYER.GENDER}milady{?}my lord{\\?} everyone are currently busy.", () => _hasBoughtProstituteToParty, null);
 
             campaignGameStarter.AddDialogLine("ce_assistant_choice_00_r", "ce_assistant_party_00", "ce_assistant_choice_00", "{=CEBROTHEL1073}Who would you like to send first?", () => !_hasBoughtProstituteToParty, CheckInBrothelCaptives);
-#if V165
+#if e165
             campaignGameStarter.AddRepeatablePlayerLine("ce_assistant_choice_01_r", "ce_assistant_choice_00", "ce_assistant_choice_01", "{=CEBROTHEL1075}Send {HERO.LINK}.", ConditionalSendBrothelCaptive, SendBrothelCaptive);
 #else
             campaignGameStarter.AddRepeatablePlayerLine("ce_assistant_choice_01_r", "ce_assistant_choice_00", "ce_assistant_choice_01", "{=CEBROTHEL1075}Send {HERO.LINK}.", "{=UNFE1BeG}I am thinking of a different person", "ce_assistant_party_00", ConditionalSendBrothelCaptive, SendBrothelCaptive);
@@ -1115,7 +1114,7 @@ namespace CaptivityEvents.Brothel
         private void CheckInBrothelCaptives()
         {
             List<CharacterObject> brothelPrisoners = FetchBrothelPrisoners(Settlement.CurrentSettlement);
-#if V165
+#if e165
             ConversationSentence.ObjectsToRepeatOver = brothelPrisoners;
 #else
             ConversationSentence.SetObjectsToRepeatOver(brothelPrisoners);
@@ -1124,7 +1123,7 @@ namespace CaptivityEvents.Brothel
 
         private void SendBrothelCaptive()
         {
-#if V165
+#if e165
             CharacterObject captive = ((CharacterObject)ConversationSentence.LastSelectedRepeatObject);
 #else
             CharacterObject captive = ((CharacterObject)ConversationSentence.SelectedRepeatObject);

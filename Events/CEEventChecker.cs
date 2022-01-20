@@ -195,7 +195,7 @@ namespace CaptivityEvents.Events
             if (captorParty.IsMobile) returnString += "\nMoral Total : " + captorParty.MobileParty.Morale;
             if (captorParty != PartyBase.MainParty)
             {
-#if V165
+#if e165
                 if (captorParty?.Leader != null)
                 {
                     returnString += "\nParty Leader Name : " + captorParty.Leader.Name.ToString();
@@ -329,7 +329,7 @@ namespace CaptivityEvents.Events
                                     referenceHero = hero.HeroObject;
                                     break;
                                 case "captor":
-#if V165
+#if e165
                                     if (!party.Leader.IsHero) { return LogError("Skipping event " + _listEvent.Name + " it does not match the captor conditions."); }
                                     referenceHero = party.Leader.HeroObject;
 #else
@@ -786,7 +786,7 @@ namespace CaptivityEvents.Events
 
         private bool CaptorPartyGenderCheck(PartyBase captorParty)
         {
-#if V165
+#if e165
             if (captorParty?.Leader != null && captorParty.Leader.IsFemale && _listEvent.MultipleRestrictedListOfFlags.Contains(RestrictedListOfFlags.CaptorGenderIsMale)) return Error("Skipping event " + _listEvent.Name + " it does not match the conditions. CaptorGenderIsMale.");
             if (captorParty?.Leader != null && !captorParty.Leader.IsFemale && _listEvent.MultipleRestrictedListOfFlags.Contains(RestrictedListOfFlags.CaptorGenderIsFemale)) return Error("Skipping event " + _listEvent.Name + " it does not match the conditions. CaptorGenderIsFemale/Femdom.");
 #else
@@ -1690,7 +1690,7 @@ namespace CaptivityEvents.Events
         private bool CaptorSkillsCheck(PartyBase captorParty)
         {
             if (_listEvent.SkillsRequired == null) return true;
-#if V165
+#if e165
             if (_listEvent.SkillsRequired.Any((SkillRequired skill) => skill.Ref == "Captor") && captorParty.Leader == null) return Error("Skipping event " + _listEvent.Name + " it does not match the conditions. ReqCaptorSkill.");
             return SkillsCheck(captorParty.Leader, true);
 #else
@@ -1795,7 +1795,7 @@ namespace CaptivityEvents.Events
         private bool CaptorTraitsCheck(PartyBase captorParty)
         {
             if (_listEvent.TraitsRequired == null) return true;
-#if V165
+#if e165
             if (captorParty.Leader == null) return Error("Skipping event " + _listEvent.Name + " it does not match the conditions. ReqCaptorTrait.");
             return TraitsCheck(captorParty.Leader, true);
 #else

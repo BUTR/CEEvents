@@ -52,7 +52,7 @@ namespace CaptivityEvents.Events
                                     referenceHero = hero.HeroObject;
                                     break;
                                 case "captor":
-#if V165
+#if e165
                                     if (!party.Leader.IsHero) { continue; }
                                     referenceHero = party.Leader.HeroObject;
 #else
