@@ -26,6 +26,8 @@
     <ButterLibVersion>1.0.31</ButterLibVersion>
     <!-- MCM Version -->
     <MCMVersion>4.3.16</MCMVersion>
+    <!-- ModuleLoader Version -->
+    <BUTRModuleLoaderVersion>1.0.1.24</BUTRModuleLoaderVersion>
   </PropertyGroup>
 
   <!--Windows Forms-->
@@ -41,6 +43,8 @@
     <PackageReference Include="Bannerlord.ReferenceAssemblies.Native.EarlyAccess" Version="$(GameVersion).*" IncludeAssets="compile" />
     <PackageReference Include="Bannerlord.ReferenceAssemblies.Core.EarlyAccess" Version="$(GameVersion).*" IncludeAssets="compile" />
     <PackageReference Include="Bannerlord.ReferenceAssemblies.Sandbox.EarlyAccess" Version="$(GameVersion).*" IncludeAssets="compile" />
+    <PackageReference Include="Bannerlord.ReferenceAssemblies.StoryMode.EarlyAccess" Version="$(GameVersion).*" IncludeAssets="compile" />
+    <PackageReference Include="Bannerlord.ReferenceAssemblies.CustomBattle.EarlyAccess" Version="$(GameVersion).*" IncludeAssets="compile" />
   </ItemGroup>
 
 </Project>
