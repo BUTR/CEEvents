@@ -26,7 +26,7 @@ jobs:
         github-token: ${{secrets.GITHUB_TOKEN}}
 
     - name: Build Captivity Events
-      run: ./build/scripts/build-fully.ps1 './' './bannerlord' 'zCaptivityEvents' 'src/CaptivityEvents/CaptivityEvents.csproj';
+      run: dotnet pack src/CaptivityEvents/CaptivityEvents.csproj --configuration Release -p:GameFolder="$PWD/bannerlord";
       shell: pwsh
 
     - name: Upload Bannerlord folder

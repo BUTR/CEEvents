@@ -31,5 +31,5 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Build Captivity Events for test
-      run: ./build/scripts/build-fully.ps1 './' './bannerlord' 'zCaptivityEvents' 'src/CaptivityEvents/CaptivityEvents.csproj';
+      run: dotnet pack src/CaptivityEvents/CaptivityEvents.csproj --configuration Release -p:GameFolder="$PWD/bannerlord";
       shell: pwsh
